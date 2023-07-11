@@ -1,0 +1,15 @@
+version: "3"
+services:  
+  mongodb-msclient-id:
+    image: mongo:latest
+    container_name: mongodb-prueba-ingaD
+    ports:
+      - 27017:2001  
+  spring-msclient-id:
+    image: daga97/spring-prueba:8.0
+    container_name: "spring-pruebaDb-dockercompose"
+    ports:
+      - 8080:8080
+    links:
+      - mongodb-msclient-id
+    
